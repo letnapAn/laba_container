@@ -1,7 +1,7 @@
 package org.example;
 
 public class IntHashSet implements IntContainer {
-    private static final int DEFAULT_CAPACITY = 16;
+    private static final int DEFAULT_CAPACITY = 32;
     private Node[] buckets;
     private int size;
 
@@ -22,7 +22,20 @@ public class IntHashSet implements IntContainer {
         int h = (value == Integer.MIN_VALUE) ? 0 : Math.abs(value);
         return h % buckets.length;
     }
-
+    private void resize() {
+        Node[] oldBuckets = buckets;
+        buckets = new Node[oldBuckets.length * 2];
+        size = 0;
+        for (Node node : oldBuckets) {
+            while (node != null) {
+                Node next = node.next;
+                int index = hash(node.value);
+                buckets[index] = new Node(node.value, buckets[index]);
+                size++;
+                node = next;
+            }
+        }
+    }
     @Override
     public boolean add(int value) {
         int index = hash(value);
@@ -33,6 +46,10 @@ public class IntHashSet implements IntContainer {
         }
         buckets[index] = new Node(value, buckets[index]);
         size++;
+
+        if ((float) size / buckets.length > 0.8) {
+            resize();
+        }
         return true;
     }
 
