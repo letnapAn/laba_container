@@ -1,4 +1,8 @@
 package org.example;
+import java.util.Iterator;
+/**
+     *  О том, что такое Conventional Commits только после 3 коммита узнала...
+ */
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
