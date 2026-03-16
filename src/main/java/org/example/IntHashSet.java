@@ -12,7 +12,6 @@ import java.util.Iterator;
  * </ul>
  *
  * @see IntContainer
- * @see Node
  * @version 1.0
  */
 public class IntHashSet implements IntContainer {
@@ -213,8 +212,7 @@ public class IntHashSet implements IntContainer {
 
     /**
      * Возвращает строковое представление контейнера.
-     * Формат: [элемент1, элемент2, ..., элементN]
-     *
+     * *
      * @return строковое представление всех элементов
      */
     @Override
