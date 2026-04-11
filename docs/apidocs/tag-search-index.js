@@ -1,1 +1,0 @@
-tagSearchIndex = [{"l":"Дополнительные операции (для удобства использования):","h":"interface org.example.IntContainer","k":"16","u":"org/example/IntContainer.html#--heading1"},{"l":"Основные операции (согласно ТЗ):","h":"interface org.example.IntContainer","k":"16","u":"org/example/IntContainer.html#--heading"}];updateSearchResults();
